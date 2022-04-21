@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  background-image: url("../assets/bg-l.png");
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body #time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+  z-index: 5;
+}
+
+body #time .digit {
+  position: relative;
+}
+
+body #time .digit span {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body #time .digit span.old {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+
+body #time .digit span.enter {
+  display: block;
+  -webkit-animation-name: enter;
+          animation-name: enter;
+  opacity: 0;
+}
+
+body #time .digit span.exit {
+  -webkit-animation-name: exit;
+          animation-name: exit;
+  display: block;
+}
+
+@-webkit-keyframes enter {
+  0% {
+    margin-top: -70px;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+    display: -webkit-box;
+    display: flex;
+  }
+}
+
+@keyframes enter {
+  0% {
+    margin-top: -70px;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@-webkit-keyframes exit {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: 70px;
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes exit {
+  0% {
+    top: 0px;
+    opacity: 1;
+  }
+  100% {
+    top: 70px;
+    display: none;
+    opacity: 0;
+  }
+}
+
+body .bg {
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+body .bg img {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% + 20px);
+  height: 30vh;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+body .bg.front img {
+  -webkit-animation-name: move1;
+          animation-name: move1;
+}
+
+body .bg.back img {
+  -webkit-animation-name: move2;
+          animation-name: move2;
+}
+
+@-webkit-keyframes move2 {
+  0% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: -20px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: -20px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@-webkit-keyframes move1 {
+  0% {
+    margin-left: -20px;
+  }
+  50% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -20px;
+  }
+}
+
+@keyframes move1 {
+  0% {
+    margin-left: -20px;
+  }
+  50% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
